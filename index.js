@@ -8,7 +8,7 @@ const app=express();
 app.use(express.json())
 app.use(cors(
     {
-          origin: ["https://ecommerce-backend-gd5eij951-ankits-projects-27b7cb4f.vercel.app"],
+          origin: ["https://ecommerce-frontend-eight-lac.vercel.app"],
           methods: ["POST", "GET", "PUT", "DELETE"],
           credentials: true
       }
