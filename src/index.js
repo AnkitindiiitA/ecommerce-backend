@@ -1,5 +1,7 @@
 const express=require("express")
 const cors=require('cors');
+const { connectDb } = require("./config/db");
+require('dotenv').config();
 
 const app=express();
 
@@ -44,4 +46,8 @@ app.use("/api/ratings",ratingRouter);
 const adminOrderRoutes=require("./routes/adminOrder.routes.js");
 app.use("/api/admin/orders",adminOrderRoutes);
 
-module.exports={app};
+const PORT=process.env.PORT
+app.listen(PORT,async ()=>{
+    await connectDb()
+    console.log("ecommerce api listing on port ",PORT)
+})
