@@ -6,7 +6,13 @@ require('dotenv').config();
 const app=express();
 
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {
+          origin: ["https://ecommerce-backend-gd5eij951-ankits-projects-27b7cb4f.vercel.app"],
+          methods: ["POST", "GET", "PUT", "DELETE"],
+          credentials: true
+      }
+  ));
 
 app.get("/",(req,res)=>{
     return res.status(200).send({message:"welcome to ecommerce api - node"})
