@@ -18,6 +18,9 @@ app.get("/",(req,res)=>{
     return res.status(200).send({message:"welcome to ecommerce api - node"})
 })
 
+const checkRoute=require("./src/routes/check.routes.js")
+app.use("/check",checkRoute);
+
 const authRouter=require("./src/routes/auth.routes.js")
 app.use("/auth",authRouter)
 
